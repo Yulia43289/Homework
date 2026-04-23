@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover"
+    />
+    <title>食咗饭未 · 粤菜学堂</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div id="home-section">
+        <div class="top-bar">
+          <h1>首页 <span>· 课程</span></h1>
+          <div class="meal-tag">🍳 早餐</div>
+        </div>
+
+        <div class="hero-banner">
+          <h2>🥢 食咗饭未</h2>
+        </div>
+
+        <section id="progress-card" class="progress-block">
+          <div class="progress-meta">
+            <span style="font-weight: 600;">🔥 连续学习</span>
+            <span id="progress-text">关卡 0/12</span>
+          </div>
+          <div class="progress-row">
+            <div class="progress-track">
+              <div id="progress-bar" class="progress-fill"></div>
+            </div>
+            <span>⭐</span>
+          </div>
+          <div class="progress-tip">解锁更多食材，做出你的粤菜宴</div>
+        </section>
+
+        <div class="home-actions">
+          <button id="home-start-btn" class="primary-btn home-start-btn">开始学习</button>
+          <button id="home-recipe-btn" class="secondary-btn">📖 查看菜谱</button>
+        </div>
+
+        <div class="bottom-spacer"></div>
+      </div>
+
+      <main id="level-page" class="container hidden">
+      <div class="level-page-topbar">
+        <button id="back-home-btn" class="icon-btn">←</button>
+        <button id="reset-level-btn" class="secondary-btn">🔄 重置学习进度</button>
+      </div>
+      <section id="level-section" class="card"></section>
+
+      <section id="reward-section" class="card hidden">
+        <div class="reward-showcase">
+          <span style="font-size: 48px;">🎉</span>
+          <h2 id="reward-name" style="margin: 12px 0;"></h2>
+          <div id="reward-desc" style="margin-bottom: 18px;"></div>
+          <div id="reward-image-slot">
+            <span>奖品图片占位区</span>
+          </div>
+        </div>
+        <div class="action-group">
+          <button id="next-level-btn" class="primary-btn">⏩ 下一关</button>
+          <button id="to-cooking-btn" class="secondary-btn">🍲 去烹饪</button>
+        </div>
+      </section>
+
+      <section id="cooking-section" class="card hidden">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div class="card-header">
+            <span>👨‍🍳</span>
+            <h3>我的厨房</h3>
+          </div>
+          <button id="back-to-level-btn" class="icon-btn">←</button>
+        </div>
+        <div style="margin: 10px 0 6px;"><strong>🧺 已解锁食材</strong></div>
+        <div id="inventory-list" class="ingredient-cloud"></div>
+        <div style="margin: 24px 0 12px;"><strong>📋 可制作菜式</strong></div>
+        <div id="recipe-board" class="recipe-grid"></div>
+        <div id="dish-result" class="dish-result">还没有烹饪结果，快试试看！</div>
+        <div style="margin-top: 30px; text-align: right;">
+          <button id="reset-btn" class="secondary-btn">🔄 重置进度</button>
+        </div>
+      </section>
+      </main>
+    </div>
+
+    <div id="cooking-modal" class="cooking-modal hidden">
+      <div class="cooking-content">
+        <div class="cooking-icon" id="cooking-icon">🍳</div>
+        <div class="cooking-title" id="cooking-title">烹饪中</div>
+        <div class="cooking-waiting">
+          等待中
+          <span class="cooking-dots">
+            <span>.</span><span>.</span><span>.</span>
+          </span>
+        </div>
+        <div class="cooking-progress-container">
+          <div class="cooking-progress-track">
+            <div id="cooking-progress-fill" class="cooking-progress-fill" style="width: 0%;"></div>
+          </div>
+          <div class="cooking-progress-text" id="cooking-progress-text">0%</div>
+        </div>
+        <div class="cooking-tip" id="cooking-tip">🔥 火候正好，马上就好...</div>
+      </div>
+    </div>
+
+    <div id="recipe-popup-modal" class="recipe-popup-modal hidden">
+      <div class="recipe-popup-content">
+        <div class="recipe-popup-icon" id="recipe-popup-icon">🎉</div>
+        <div class="recipe-popup-title" id="recipe-popup-title">菜品完成！</div>
+        <div class="recipe-popup-image" id="recipe-popup-image">🍲</div>
+        <div class="recipe-popup-desc" id="recipe-popup-desc">美味佳肴，新鲜出炉！</div>
+        <button class="recipe-popup-btn" id="recipe-popup-close-btn">太棒了！</button>
+      </div>
+    </div>
+
+    <div id="food-showcase" class="hidden"></div>
+    <div id="shopping-basket" class="hidden">
+      <img
+        class="basket-icon"
+        src="./assets/bottom food/eb7a67a8da88cb0a0f9c47fc5cdf910d4d97775e1daa86-fhg8NY.png"
+        alt="菜篮子"
+      />
+      <span id="basket-count-badge" class="basket-count-badge">0</span>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
